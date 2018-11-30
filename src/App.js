@@ -98,7 +98,7 @@ class App extends Component {
     this.setState({ loading: true, entries: [] })
     const promises = this._indexes().map(i => {
       return sdk.contract.call({
-        contractAddress: contractAddress,
+        contractAddress: contractDetails.address,
         input: JSON.stringify({
           method: 'getPrice',
           params: {
@@ -109,7 +109,7 @@ class App extends Component {
         optType: 2,  //query
       }).then(data => {
         this.setTimeslotPrice(i, 
-           JSON.parse(data:data.result.query_rets[0].result.value));
+           JSON.parse(data.result.query_rets[0].result.value));
       }).catch(err => console.error("Error msg: " + JSON.stringify(err)));
     });
     Promise.all(promises).then(() => {

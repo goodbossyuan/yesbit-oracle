@@ -37,5 +37,11 @@
     "react-loader-spinner": "^2.0.6",
     "react-scripts": "^2.1.1",
     "victory": "^30.4.1"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }

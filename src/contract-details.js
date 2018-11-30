@@ -1,3 +1,3 @@
 module.exports = {
-  address: "buQf3fs2gGpPqmuGDiuhfqRdvmRXz3GCbaWF",
+  address: "buQidpMR5iWwejVPYAjx91K5vviXpvCxG5xV",
 };

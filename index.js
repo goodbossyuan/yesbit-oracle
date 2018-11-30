@@ -187,7 +187,7 @@ function run(modules, contract) {
                    });
                 } else {
                    consoele.log(
-                     reason:JSON.parse(result.transaction[0].errorDesc)[0]
+                     {reason:JSON.parse(result.transaction[0].errorDesc)[0]}
                    );
                 }
         }) 
@@ -196,9 +196,9 @@ function run(modules, contract) {
   }
 }
 
-run(modules, contract);
+run(modules, '');
 const j = schedule.scheduleJob(fetchSchedule, function() {
-  run(modules, contract);
+  run(modules, '');
 });
 
 
