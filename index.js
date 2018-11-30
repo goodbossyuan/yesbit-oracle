@@ -169,7 +169,7 @@ function run(modules, contract) {
       const feedID = module.oracleID;
       const timeslot = new Date().getUTCHours();
       callContractMethod({
-         address: contractDetails.address,
+         address: getAddress(privateKey),
          privateKey:privateKey,
          contractAddr:contractDetails.address,
          method: 'setPrice',
@@ -178,17 +178,7 @@ function run(modules, contract) {
             timeslot: timeslot,
             price: price
          },
-      }) .then(count => {
-          console.log(`getTransactionCount: ${count}`)
-          return contract.setPrice(feedID, timeslot, price, options)
-        }).then(
-          result => {
-            console.log("Result:  " + JSON.stringify(result))
-            run(modules, contract)
-          },
-          err => console.error("Error msg: " + err)
-        )
-        // TODO
+      }) 
         .then(info => {
                 console.log(info);
                 if (info.errorCode == 0) {
